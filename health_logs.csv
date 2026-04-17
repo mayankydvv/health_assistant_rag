@@ -1,0 +1,118 @@
+dev,2025-04-14 14:22:08,,,paracitamall - in 1 minutes,
+dev2,2025-04-14 14:32:13,,,parace - in 2 minutes,
+dev,2025-04-16 16:55:34,,,cdsv - in 1 minutes,
+dev,2025-04-16 19:09:34,,,EYEDROP FLOGEL - in 1 minutes,
+dev,2025-04-16 21:04:17,fever,"{'Causes': 'Viral Infection', 'Disease': 'RespiratoryInfection', 'Medicine': 'Antivirals, Rest'}",,
+dev,2025-04-16 21:04:54,fever,"{'Causes': 'Viral Infection', 'Disease': 'RespiratoryInfection', 'Medicine': 'Antivirals, Rest'}",,
+dev,2025-04-16 21:05:28,headache,"{'Causes': 'Eye Strain', 'Disease': 'Vision Fatigue', 'Medicine': 'Rest, Eye Exercises'}",,
+dev,2025-04-17 02:03:37,,,meftol - in 1 minutes,
+dev,2025-04-17 02:05:22,fever,"{'Causes': 'Viral Infection', 'Disease': 'RespiratoryInfection', 'Medicine': 'Antivirals, Rest'}",,
+dev,2025-04-17 02:14:03,fever,"{'Causes': 'Viral Infection', 'Disease': 'RespiratoryInfection', 'Medicine': 'Antivirals, Rest'}",,
+dev,2025-04-17 02:21:54,fever,"{'Causes': 'Viral Infection', 'Disease': 'RespiratoryInfection', 'Medicine': 'Antivirals, Rest'}",,
+dev,2025-04-17 02:25:16,anxiety,"{'Causes': 'Stress', 'Disease': 'Anxiety Disorder', 'Medicine': 'Therapy, Medication'}",,
+dev,2025-04-17 02:30:03,back pain,"{'Causes': 'Sciatica', 'Disease': 'Herniated Disc', 'Medicine': 'Pain Relievers, PT'}",,
+dev,2025-04-17 02:34:49,nausea,"{'Causes': 'Food Poisoning', 'Disease': 'Gastroenteritis', 'Medicine': '  Oral Rehydration'}",,
+dev,2025-04-17 02:39:30,nausea,"{'Causes': 'Food Poisoning', 'Disease': 'Gastroenteritis', 'Medicine': '  Oral Rehydration'}",,
+dev,2025-04-17 02:46:16,fever,"{'Causes': 'Viral Infection', 'Disease': 'RespiratoryInfection', 'Medicine': 'Antivirals, Rest'}",,
+dev,2025-12-10 17:03:49,fever,"{'Causes': 'Viral Infection', 'Disease': 'RespiratoryInfection', 'Medicine': 'Antivirals, Rest'}",,
+dev,2025-12-11 16:09:40,fever,RespiratoryInfection,"Antivirals, Rest",,
+dev,2025-12-11 16:12:54,fever,RespiratoryInfection,"Antivirals, Rest",,
+dev,2025-12-11 16:15:32,fever,RespiratoryInfection,"Antivirals, Rest",,
+dev,2025-12-11 16:16:04,headache,Vision Fatigue,"Rest, Eye Exercises",,
+dev,2025-12-11 18:20:06,nausea,"{'Causes': 'Food Poisoning', 'Disease': 'Gastroenteritis', 'Medicine': '  Oral Rehydration'}",,
+dev,2025-12-11 18:20:27,nausea,"{'Causes': 'Food Poisoning', 'Disease': 'Gastroenteritis', 'Medicine': '  Oral Rehydration'}",,
+dev,2026-03-23 18:46:05,fever,"{'Causes': 'Viral Infection', 'Disease': 'RespiratoryInfection', 'Medicine': 'Antivirals, Rest'}",,
+dev,2026-04-04 13:31:21,i have pain in my calves and foot,"However, if you would like to explore more information about your symptoms, I can try to provide more details.",,
+dev,2026-04-04 13:32:42,fever,"I'm sorry, I encountered an error: Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.",,
+dev,2026-04-04 13:35:56,i am having slight headache,"I'm sorry, I encountered an error: Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.",,
+dev,2026-04-04 13:40:15,fever,Can I set a reminder to take my medicine at 8am tomorrow?,,
+dev,2026-04-04 13:41:05,yes,I'm happy to assist you. How can I help you today?,,
+dev,2026-04-04 13:41:23,set the reminder for the fever medicine,"I have set a reminder for ibuprofen at 14:11. You can take ibuprofen to relieve fever, headache, and body aches. Please note that it's essential to follow the recommended dosage and consult with a healthcare professional if you have any concerns or questions.",,
+dev,2026-04-04 13:46:12,fever,Would you like to set a reminder to take your medicine?,,
+dev,2026-04-04 13:47:03,fever,Agent stopped due to max iterations.,,
+dev,2026-04-04 14:05:19,fever,Please note that I have set a reminder for amoxicillin at 14:13.,,
+dev,2026-04-04 14:10:14,fever,I have provided the necessary medical advice and stopped the conversation as per the rules.,,
+dev,2026-04-04 14:10:43,suggest some medicine for it,"I can't recommend any medicine without knowing the symptoms or condition you're referring to. If you'd like to look up a specific symptom or condition, I can use the 'medical_search' tool to provide you with information and advice.",,
+dev,2026-04-04 14:10:52,fever,Note: The reminder time is based on the assumption that the current time is 14:50.,,
+dev,2026-04-04 14:15:56,fever,Agent stopped due to max iterations.,,
+dev,2026-04-04 14:18:58,fever,Agent stopped due to max iterations.,,
+dev,2026-04-04 14:21:04,fever,"<|python_tag|>
+
+However, I must note that the provided function call was not used correctly. The 'medical_search' function is supposed to be used exclusively for looking up medical symptoms, diseases, causes, and remedies.",,
+dev,2026-04-04 14:21:55,suggest  medicine for this,"I cannot provide medical advice. If you are experiencing a medical issue, I suggest you consult a qualified healthcare professional. Is there anything else I can help you with?",,
+dev,2026-04-04 14:22:22,give medicine advice to calm it down,"I can't provide medical advice. If you are experiencing anxiety or stress, I suggest you consult a healthcare professional.",,
+dev,2026-04-04 14:28:12,fever,"Based on our medical database... 
+
+If you're experiencing a fever, it's essential to rest and stay hydrated. 
+
+In the case of pneumonia, antibiotics are often prescribed to help clear up the infection. However, it's crucial to follow the advice of a healthcare professional for proper diagnosis and treatment.
+
+If you're experiencing a fever, you can try to manage it by:
+
+- Drinking plenty of fluids, such as water or electrolyte-rich beverages
+- Taking over-the-counter medications like acetaminophen (Tylenol) or ibuprofen (Advil) to help reduce the fever
+- Resting and avoiding strenuous activities
+
+Please note that if your fever is extremely high (over 103°F) or lasts for an extended period, you should seek medical attention.",,
+dev,2026-04-04 14:28:22,suggest medicine,"Based on our medical database... 
+
+For the Common Cold, I would recommend the following medicines to help alleviate symptoms:
+
+1. **Ibuprofen**: This is a pain reliever and a fever reducer that can help reduce the discomfort associated with a fever and headaches.
+2. **Acetaminophen**: Similar to ibuprofen, this medicine can help reduce fever and alleviate headaches and body aches.
+3. **Expectorants**: These medicines can help loosen and clear mucus from the chest, making it easier to cough up. Examples include guaifenesin (Mucinex) and dextromethorphan (Robitussin).
+4. **Decongestants**: These medicines can help reduce nasal congestion and sinus pressure. Examples include pseudoephedrine (Sudafed) and phenylephrine (Sudafed PE).
+
+Please note that these medicines are not a cure for the Common Cold, but rather a way to manage symptoms. It's also essential to rest, stay hydrated, and practice good hygiene to help your body recover from the illness.
+
+Remember to always consult with a healthcare professional before taking any medication, especially if you have any underlying medical conditions or are taking other medications.",,
+dev,2026-04-04 14:28:42,set a reminder for acetaminophen,"I'm sorry, I encountered an error: Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.",,
+dev,2026-04-04 14:36:02,nausea and feel like vommiting,"Based on our medical database, if you're experiencing nausea and vomiting, it's essential to stay hydrated by drinking plenty of fluids, such as water or an oral rehydration solution. You can also try to eat small, frequent meals to help manage your symptoms. If your symptoms persist or worsen, it's always a good idea to consult with a healthcare professional for further guidance and support.",,
+dev,2026-04-04 14:36:15,give medicine,"I'm sorry, I encountered an error: Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.",,
+dev,2026-04-04 14:40:09,shin pain,"I'm sorry, I encountered an error: Got unsupported early_stopping_method `generate`",,
+dev,2026-04-04 14:40:20,fever,"Based on our medical database... Fever is a common symptom of pneumonia. It's usually a sign that your body is fighting off the infection. If you're experiencing a fever, it's essential to rest and stay hydrated. 
+
+In the case of pneumonia, antibiotics are often prescribed to help clear up the infection. However, if you're experiencing a fever, it's crucial to consult with a healthcare professional for proper diagnosis and treatment.
+
+Some general tips to help manage a fever include:
+
+- Staying hydrated by drinking plenty of fluids
+- Resting and avoiding strenuous activities
+- Taking over-the-counter medications like acetaminophen (such as Tylenol) or ibuprofen (such as Advil or Motrin) to help reduce the fever
+- Dressing lightly and staying in a cool environment
+
+Please note that these are general tips and not a substitute for medical advice. If you're experiencing a fever, it's always best to consult with a healthcare professional for proper guidance.",,
+dev,2026-04-04 14:40:39,remedy to fix this,"I'm sorry, I encountered an error: Got unsupported early_stopping_method `generate`",,
+dev,2026-04-04 14:46:03,hairline fracture in hand,"Based on our medical database... a hairline fracture in the hand can be a painful and sensitive issue. Given the context, I'll provide some general information and advice.
+
+**Symptoms:**
+
+* Pain or tenderness in the affected area
+* Swelling or bruising around the fracture site
+* Limited mobility or stiffness in the hand or fingers
+* Difficulty gripping or holding objects
+
+**Causes:**
+
+* Trauma or injury to the hand, such as a fall or a blow to the hand
+* Overuse or repetitive strain on the hand or fingers
+* Poor posture or biomechanics
+
+**Recommended treatment:**
+
+* Rest, ice, compression, and elevation (RICE) to reduce pain and swelling
+* Immobilization of the affected area using a splint or cast to prevent further injury
+* Pain management using over-the-counter pain relievers, such as acetaminophen or ibuprofen
+* Physical therapy or exercises to maintain range of motion and strengthen the hand and fingers
+
+**When to seek medical attention:**
+
+* If the pain is severe or worsening
+* If there is numbness, tingling, or loss of sensation in the hand or fingers
+* If the hand or fingers are cold or pale
+* If there is difficulty moving the hand or fingers
+* If the fracture is suspected to be more severe or complex
+
+Please note that this is general advice, and it's always best to consult a medical professional for a proper diagnosis and treatment plan. They may recommend further imaging studies, such as X-rays, to confirm the diagnosis and determine the best course of treatment.",,
+dev,2026-04-04 14:46:31,can you give medicine to stop the current pain till i reach doctor,"Based on our medical database... for pain relief from a hairline fracture in the hand, you can consider taking over-the-counter pain medications such as acetaminophen (Tylenol) or ibuprofen (Advil, Motrin). However, it's essential to follow the recommended dosage and consult a doctor if you have any underlying medical conditions or concerns. Additionally, rest, ice, compression, and elevation can also help alleviate pain and promote healing.",,
+dev,2026-04-04 14:46:46,ok send a reminder for the medicine,"medical_search{""symptom_query"": ""hairline fracture in hand""}",,

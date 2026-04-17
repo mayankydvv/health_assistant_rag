@@ -1,0 +1,266 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Assistant Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        #chatbox {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .message {
+            margin: 10px 0;
+            padding: 8px 12px;
+            border-radius: 5px;
+            clear: both; /* Prevent floating issues */
+        }
+        .user {
+            background-color: #e0f7fa; /* Light cyan */
+            text-align: right;
+            color: #00838f; /* Dark cyan */
+            float: right;
+        }
+        .bot {
+            background-color: #f1f8e9; /* Light green */
+            text-align: left;
+            color: #388e3c; /* Dark green */
+            float: left;
+        }
+        #inputArea {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            display: flex;
+        }
+        #userInput {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+        }
+        #sendBtn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+        }
+        #sendBtn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">Health Assistant Chatbot</h2>
+    <div id="chatbox"></div>
+    <div id="inputArea">
+        <input type="text" id="userInput" placeholder="Type your symptom..." />
+        <button id="sendBtn">Send</button>
+    </div>
+
+    <script>
+        const chatbox = document.getElementById("chatbox");
+        const userInput = document.getElementById("userInput");
+        const sendBtn = document.getElementById("sendBtn");
+
+        // Append messages to chatbox
+        function appendMessage(sender, text) {
+            const msg = document.createElement("div");
+            msg.classList.add("message", sender);
+            msg.innerText = text;
+            chatbox.appendChild(msg);
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+
+        sendBtn.addEventListener("click", () => {
+            const message = userInput.value.trim();
+            if (message === "") return;
+
+            appendMessage("user", message);  // Show user message
+            userInput.value = "";  // Clear input field
+
+            // Fetch response from Flask backend
+            fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: message })  // Send message as JSON
+            })
+            .then(res => res.json())  // Expect JSON response
+            .then(data => {
+                // Check if the response contains a message
+                if (data.response) {
+                    appendMessage("bot", data.response);  // Show bot message
+                } else {
+                    appendMessage("bot", "Sorry, I couldn't understand that.");  // Default response
+                }
+            })
+            .catch(err => {
+                appendMessage("bot", "Something went wrong dev!");
+                console.error(err);
+            });
+        });
+
+        userInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") sendBtn.click();  // Trigger send button on Enter key press
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Assistant Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        #chatbox {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .message {
+            margin: 10px 0;
+            padding: 8px 12px;
+            border-radius: 5px;
+            clear: both; /* Prevent floating issues */
+        }
+        .user {
+            background-color: #e0f7fa; /* Light cyan */
+            text-align: right;
+            color: #00838f; /* Dark cyan */
+            float: right;
+        }
+        .bot {
+            background-color: #f1f8e9; /* Light green */
+            text-align: left;
+            color: #388e3c; /* Dark green */
+            float: left;
+        }
+        #input-area {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            display: flex;
+        }
+        #userInput {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #sendBtn {
+            padding: 10px 20px;
+            margin-left: 10px;
+            background: #00796b;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #sendBtn:hover {
+            background: #004d40;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="chatbox">
+        <div class="message bot">Hello! Describe your symptoms, and I'll try to help.</div>
+    </div>
+
+    <div id="input-area">
+        <input type="text" id="userInput" placeholder="Type your message here...">
+        <button id="sendBtn">Send</button>
+    </div>
+
+    <script>
+        const chatbox = document.getElementById("chatbox");
+        const userInput = document.getElementById("userInput");
+        const sendBtn = document.getElementById("sendBtn");
+
+        function appendMessage(sender, text) {
+            const msg = document.createElement("div");
+            msg.classList.add("message", sender);
+            
+            // Format the text for HTML if it's the bot responding
+            if (sender === "bot") {
+                // Convert Markdown bold (**text**) to HTML bold (<b>text</b>)
+                let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+                // Convert newlines (\n) to HTML line breaks (<br>)
+                formattedText = formattedText.replace(/\n/g, '<br>');
+                
+                msg.innerHTML = formattedText; // Use innerHTML to render the tags
+            } else {
+                msg.innerText = text; // Keep innerText for user to prevent XSS
+            }
+            
+            chatbox.appendChild(msg);
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+
+        sendBtn.addEventListener("click", () => {
+            const message = userInput.value.trim();
+            if (message === "") return;
+
+            appendMessage("user", message);  // Show user message
+            userInput.value = "";  // Clear input field
+
+            // Fetch response from Flask backend
+            fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: message })  // Send message as JSON
+            })
+            .then(res => res.json())  // Expect JSON response
+            .then(data => {
+                // Check if the response contains a message
+                if (data.response) {
+                    appendMessage("bot", data.response);  // Show formatted bot message
+                } else {
+                    appendMessage("bot", "Sorry, I couldn't understand that.");  // Default response
+                }
+            })
+            .catch(err => {
+                appendMessage("bot", "Something went wrong dev!");
+                console.error(err);
+            });
+        });
+
+        userInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") sendBtn.click();  // Trigger send button on Enter key press
+        });
+    </script>
+</body>
+</html>

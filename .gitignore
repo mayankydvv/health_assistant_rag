@@ -1,0 +1,19 @@
+# Node/React
+node_modules/
+dist/
+build/
+.next/
+
+# Python/ML
+__pycache__/
+venv/
+.venv/
+env/
+*.pt
+*.bin
+myenv/
+myenv/
+.env
+
+# OS generated files
+.DS_Store

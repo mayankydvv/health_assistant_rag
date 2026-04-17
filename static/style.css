@@ -1,0 +1,388 @@
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  /* Removed height: 100vh; to allow content to scroll naturally */
+  background-image: url('images/BG.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+/* Container */
+.container {
+  max-width: 900px; /* Adjusted max-width */
+  width: 90%; /* Added width for responsiveness */
+  margin: 30px auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
+}
+
+/* Typography */
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+}
+
+h2 {
+  color: #34495e;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 30px;
+}
+
+/* --- LOGOUT BUTTON FIX: Simple Icon --- */
+.logoutBtn {
+  display: flex;
+  justify-content: center; /* Center icon */
+  align-items: center;
+  width: 45px; /* Fixed width */
+  height: 45px; /* Fixed height */
+  border-radius: 50%; /* Perfect circle */
+  background-color: #ff4141; /* Red color */
+  transition: background-color 0.2s ease; /* Simple hover transition */
+  overflow: hidden;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  /* Removed animation-related properties: width, transition, overflow */
+}
+
+.logoutBtn:hover {
+  background-color: #e03939; /* Slightly darker red on hover */
+  width: 45px; /* Ensure width stays fixed */
+  border-radius: 50%; /* Ensure shape stays fixed */
+}
+
+.sign {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Removed transition */
+}
+
+.logoutBtn:hover .sign {
+  width: 100%; /* Ensure width stays full */
+  padding-left: 0; /* No padding shift */
+}
+
+.sign svg {
+  width: 22px; /* Slightly increased size for better visibility */
+  fill: white;
+}
+
+.text {
+  /* Hide the text completely */
+  display: none; 
+}
+
+/* Removed .logoutBtn:hover .text styles */
+/* --- END LOGOUT BUTTON FIX --- */
+
+/* Sections */
+.symptom-section,
+.reminder-section,
+.reminders-list,
+.chart-section {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; 
+}
+
+/* --- Input Constraint and Layout --- */
+input[type="text"],
+input[type="number"],
+input[type="time"],
+select {
+  box-sizing: border-box; 
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+/* Fix: Symptom section input and button layout */
+.symptom-section #symptomInput {
+    margin-bottom: 10px;
+}
+
+.symptom-section {
+    display: flex;
+    flex-direction: column;
+}
+.symptom-section h2 {
+    flex-shrink: 0;
+}
+.symptom-section #symptomInput {
+    flex-shrink: 0;
+}
+
+/* Fix: Make the chat box scrollable to prevent the entire form from sliding */
+#chat-messages {
+    height: 150px; 
+    overflow-y: auto; 
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    background-color: #e8f4ff;
+    border-radius: 6px;
+    border-left: 4px solid #4485e7;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+/* Fix: Horizontal layout for buttons in symptom section */
+.symptom-section .custom-speech-btn {
+    display: inline-block;
+    width: auto;
+    margin: 10px 5px 10px 0;
+    padding: 15px 20px;
+}
+
+/* Fix: Ensure reminder section inputs stack vertically as intended */
+.reminder-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0; 
+}
+/* --- End Input Constraint and Layout --- */
+
+
+input:focus,
+select:focus {
+  border-color: #4485e7;
+  outline: none;
+}
+
+/* Response Box (Generic) */
+.response-box {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #e8f4ff;
+  border-radius: 6px;
+  border-left: 4px solid #4485e7;
+}
+
+/* Fix: Constrain Active Reminders List to prevent sliding */
+#activeReminders {
+    max-height: 250px; 
+    overflow-y: auto; 
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 30px 0;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+/* End Active Reminders Fix */
+
+/* Reminders */
+.reminder-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin: 10px 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.reminder-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reminder-item.completed {
+  opacity: 0.7;
+  text-decoration: line-through;
+  background-color: #f0f0f0;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #4485e7;
+}
+
+/* Buttons */
+.custom-speech-btn {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Ensure the Set Reminder button stays full width */
+.reminder-section .custom-speech-btn {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 15px 30px;
+}
+
+.custom-speech-btn:hover {
+  background-color: #4485e7;
+  color: white;
+  box-shadow: 0 8px 20px rgba(68, 133, 231, 0.3);
+  transform: translateY(-3px);
+}
+
+.custom-speech-btn:active {
+  transform: translateY(0);
+}
+
+.btn-71 {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  background-color: #a370f0;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-transform: uppercase;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  margin: 30px auto;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(163, 112, 240, 0.3);
+}
+
+.btn-71:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(163, 112, 240, 0.4);
+}
+
+.btn-71:active {
+  transform: translateY(0);
+}
+
+/* Chart */
+#sicknessChart {
+  width: 100%;
+  height: 300px;
+  margin-top: 15px;
+}
+
+/* Health Logs */
+#healthLogs {
+  display: none;
+  margin-top: 30px;
+}
+
+.log-table-container {
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+      margin: 15px;
+      padding: 20px;
+      width: auto; 
+  }
+  
+  h1 {
+      font-size: 1.8rem;
+  }
+  
+  h2 {
+      font-size: 1.3rem;
+  }
+  
+  .symptom-section,
+  .reminder-section,
+  .reminders-list,
+  .chart-section {
+      padding: 15px;
+  }
+
+  /* Stack buttons vertically on very small screens */
+  .symptom-section .custom-speech-btn {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.symptom-section,
+.reminder-section,
+.reminders-list,
+.chart-section {
+  animation: fadeIn 0.5s ease-out;
+}
